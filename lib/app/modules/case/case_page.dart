@@ -25,36 +25,61 @@ class _CasePageState extends ModularState<CasePage, CaseController> {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: sw * 0.03),
-            color: Colors.white,
-            child: TextFormField(
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: 'Nome',
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(
+              height: sh * 0.06,
+            ),
+            SizedBox(width: sw),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: sw * 0.03),
+              width: sw * 0.8,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(sh * 0.02)),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Nome',
+                ),
               ),
             ),
-          ),
-          Container(
-            width: sw * 0.8,
-            height: sh * 0.1,
-            padding: EdgeInsets.symmetric(horizontal: sw * 0.03),
-            color: Colors.white,
-            child: TextFormField(
-              minLines: null,
-              maxLines: null,
-              maxLength: 144,
-              expands: true,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: 'Descrição',
+            SizedBox(
+              height: sh * 0.03,
+            ),
+            Container(
+              width: sw * 0.8,
+              height: sh * 0.6,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(sh * 0.02)),
+              padding: EdgeInsets.symmetric(
+                  horizontal: sw * 0.03, vertical: sh * 0.01),
+              child: TextFormField(
+                minLines: null,
+                maxLines: null,
+                maxLength: 1000,
+                expands: true,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Descrição',
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Modular.to.pushReplacementNamed('/home');
+        },
+        child: Icon(
+          Icons.add,
+          color: colorC,
+        ),
+        backgroundColor: Colors.white,
       ),
     );
   }

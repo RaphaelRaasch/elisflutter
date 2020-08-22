@@ -8,9 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:elis/app/app_widget.dart';
 import 'package:elis/app/modules/home/home_module.dart';
 
+import 'modules/store/user_store.dart';
+
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
+        Bind((i) => UserStore()),
         Bind((i) => AppController()),
       ];
 
