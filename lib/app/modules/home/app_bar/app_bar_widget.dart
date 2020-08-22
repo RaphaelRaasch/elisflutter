@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatelessWidget {
+  final title;
+
+  const AppBarWidget({
+    @required this.title,
+  });
   @override
   Widget build(BuildContext context) {
     double sh = MediaQuery.of(context).size.height;
@@ -10,7 +15,7 @@ class AppBarWidget extends StatelessWidget {
       child: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text('Home'),
+        title: Text(title),
         actions: [
           IconButton(
               icon: Icon(

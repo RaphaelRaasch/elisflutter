@@ -8,7 +8,7 @@ class AuthModule extends ChildModule {
   @override
   List<Bind> get binds => [
         Bind((i) => FormController()),
-        Bind((i) => AuthController()),
+        Bind((i) => AuthController(Modular.get())),
       ];
 
   @override

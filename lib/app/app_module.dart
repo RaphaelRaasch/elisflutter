@@ -1,6 +1,7 @@
 import 'package:elis/app/modules/auth/auth_module.dart';
 import 'package:elis/app/modules/case/case_module.dart';
 import 'package:elis/app/modules/curse/curse_module.dart';
+import 'package:elis/app/modules/profile/profile_module.dart';
 
 import 'app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -20,6 +21,7 @@ class AppModule extends MainModule {
   @override
   List<Router> get routers => [
         Router('/', module: AuthModule()),
+        Router('/profile', module: ProfileModule()),
         Router('/home', module: HomeModule()),
         Router('/case', module: CaseModule()),
         Router('/curse', module: CurseModule()),

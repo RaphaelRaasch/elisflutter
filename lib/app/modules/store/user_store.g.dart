@@ -12,13 +12,13 @@ mixin _$UserStore on _UserStoreBase, Store {
   final _$userAtom = Atom(name: '_UserStoreBase.user');
 
   @override
-  UserStore get user {
+  UserModel get user {
     _$userAtom.reportRead();
     return super.user;
   }
 
   @override
-  set user(UserStore value) {
+  set user(UserModel value) {
     _$userAtom.reportWrite(value, super.user, () {
       super.user = value;
     });
@@ -28,7 +28,7 @@ mixin _$UserStore on _UserStoreBase, Store {
       ActionController(name: '_UserStoreBase');
 
   @override
-  void setUser(dynamic v) {
+  void setUser(UserModel v) {
     final _$actionInfo = _$_UserStoreBaseActionController.startAction(
         name: '_UserStoreBase.setUser');
     try {

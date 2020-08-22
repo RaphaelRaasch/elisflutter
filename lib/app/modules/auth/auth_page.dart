@@ -38,68 +38,74 @@ class _AuthPageState extends ModularState<AuthPage, AuthController> {
             ),
             Center(
               child: SingleChildScrollView(
-                child: Container(
-                  height: sh * 0.8,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      SizedBox(
-                        width: sw,
-                      ),
-                      FormWidget(
-                        hint: 'Email',
-                        obscure: false,
-                        onChanged: (value) {
-                          controller.email = value;
-                        },
-                        type: TextInputType.emailAddress,
-                      ),
-                      SizedBox(
-                        height: sh * 0.03,
-                      ),
-                      FormWidget(
-                        hint: 'Password',
-                        obscure: true,
-                        onChanged: (value) {
-                          controller.password = value;
-                        },
-                        type: TextInputType.text,
-                      ),
-                      SizedBox(
-                        height: sh * 0.03,
-                      ),
-                      Container(
-                        height: sh * 0.04,
-                        width: sw * 0.6,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(sw)),
-                        child: FlatButton(
-                          onPressed: () {
-                            controller.signIn();
-                          },
-                          child: Text('LOGIN'),
+                child: controller.loading == false
+                    ? Container(
+                        height: sh * 0.8,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            SizedBox(
+                              width: sw,
+                            ),
+                            FormWidget(
+                              hint: 'Email',
+                              obscure: false,
+                              onChanged: (value) {
+                                controller.email = value;
+                              },
+                              type: TextInputType.emailAddress,
+                            ),
+                            SizedBox(
+                              height: sh * 0.03,
+                            ),
+                            FormWidget(
+                              hint: 'Password',
+                              obscure: true,
+                              onChanged: (value) {
+                                controller.password = value;
+                              },
+                              type: TextInputType.text,
+                            ),
+                            controller.error == false
+                                ? SizedBox()
+                                : Text(
+                                    'Usuario ou senha invalidos',
+                                    style: TextStyle(
+                                      color: Colors.red,
+                                    ),
+                                  ),
+                            SizedBox(
+                              height: sh * 0.03,
+                            ),
+                            Container(
+                              height: sh * 0.04,
+                              width: sw * 0.6,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(sw)),
+                              child: FlatButton(
+                                onPressed: () {
+                                  controller.signIn();
+                                },
+                                child: Text('LOGIN'),
+                              ),
+                            ),
+                            SizedBox(
+                              height: sh * 0.03,
+                            ),
+                            FlatButton(
+                              onPressed: () {
+                                Modular.to.pushReplacementNamed('/profile');
+                              },
+                              child: Text(
+                                'Register',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      SizedBox(
-                        height: sh * 0.03,
-                      ),
-                      Container(
-                        height: sh * 0.04,
-                        width: sw * 0.6,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(sw)),
-                        child: FlatButton(
-                          onPressed: () {
-                            controller.signUp();
-                          },
-                          child: Text('REGISTER'),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                      )
+                    : CircularProgressIndicator(),
               ),
             ),
           ],

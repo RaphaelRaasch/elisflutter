@@ -2,6 +2,7 @@ import 'package:elis/app/modules/colors.dart';
 import 'package:elis/app/modules/home/app_bar/app_bar_widget.dart';
 import 'package:elis/app/modules/home/card_profile/card_profile_widget.dart';
 import 'package:elis/app/modules/home/list_item/list_item_widget.dart';
+import 'package:elis/app/modules/store/user_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -17,6 +18,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends ModularState<HomePage, HomeController> {
   //use 'controller' variable to access controller
+  UserStore user = Modular.get();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,9 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        AppBarWidget(),
+                        AppBarWidget(
+                          title: user.user.email,
+                        ),
                         CardProfileWidget(
                           text: 'CASO CLINICO',
                           onPressed: () {

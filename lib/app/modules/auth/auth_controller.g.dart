@@ -39,11 +39,43 @@ mixin _$AuthController on _AuthControllerBase, Store {
     });
   }
 
+  final _$errorAtom = Atom(name: '_AuthControllerBase.error');
+
+  @override
+  bool get error {
+    _$errorAtom.reportRead();
+    return super.error;
+  }
+
+  @override
+  set error(bool value) {
+    _$errorAtom.reportWrite(value, super.error, () {
+      super.error = value;
+    });
+  }
+
+  final _$loadingAtom = Atom(name: '_AuthControllerBase.loading');
+
+  @override
+  bool get loading {
+    _$loadingAtom.reportRead();
+    return super.loading;
+  }
+
+  @override
+  set loading(bool value) {
+    _$loadingAtom.reportWrite(value, super.loading, () {
+      super.loading = value;
+    });
+  }
+
   @override
   String toString() {
     return '''
 email: ${email},
-password: ${password}
+password: ${password},
+error: ${error},
+loading: ${loading}
     ''';
   }
 }
