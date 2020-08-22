@@ -1,5 +1,6 @@
 import 'package:elis/app/modules/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'case_controller.dart';
 
@@ -25,54 +26,65 @@ class _CasePageState extends ModularState<CasePage, CaseController> {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(
-              height: sh * 0.06,
-            ),
-            SizedBox(width: sw),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: sw * 0.03),
-              width: sw * 0.8,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(sh * 0.02)),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: 'Nome',
+      body: Observer(
+        builder: (context) {
+          return SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(
+                  height: sh * 0.06,
                 ),
-              ),
-            ),
-            SizedBox(
-              height: sh * 0.03,
-            ),
-            Container(
-              width: sw * 0.8,
-              height: sh * 0.6,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(sh * 0.02)),
-              padding: EdgeInsets.symmetric(
-                  horizontal: sw * 0.03, vertical: sh * 0.01),
-              child: TextFormField(
-                minLines: null,
-                maxLines: null,
-                maxLength: 1000,
-                expands: true,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: 'Descrição',
+                SizedBox(width: sw),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: sw * 0.03),
+                  width: sw * 0.8,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(sh * 0.02)),
+                  child: TextFormField(
+                    onChanged: (value) {
+                      controller.title = value;
+                    },
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Nome',
+                    ),
+                  ),
                 ),
-              ),
+                SizedBox(
+                  height: sh * 0.03,
+                ),
+                Container(
+                  width: sw * 0.8,
+                  height: sh * 0.6,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(sh * 0.02)),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: sw * 0.03, vertical: sh * 0.01),
+                  child: TextFormField(
+                    minLines: null,
+                    maxLines: null,
+                    maxLength: 1000,
+                    expands: true,
+                    onChanged: (value) {
+                      controller.description = value;
+                    },
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Descrição',
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          controller.createCase();
           Modular.to.pushReplacementNamed('/home');
         },
         child: Icon(

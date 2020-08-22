@@ -6,7 +6,7 @@ import 'case_page.dart';
 class CaseModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        Bind((i) => CaseController()),
+        Bind((i) => CaseController(Modular.get())),
       ];
 
   @override
