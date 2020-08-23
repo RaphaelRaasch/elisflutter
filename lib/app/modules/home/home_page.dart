@@ -74,7 +74,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                     Icons.comment,
                     color: colorC,
                   ),
-                  title: Text("Ranking Participações"),
+                  title: Text("Ranking participações"),
                   onTap: () => Modular.to.pushNamed('/profile'),
                 ),
                 ListTile(
@@ -82,7 +82,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                     Icons.assessment,
                     color: colorC,
                   ),
-                  title: Text("Ranking Cursos"),
+                  title: Text("Ranking cursos"),
                   onTap: () => Modular.to.pushNamed('/profile'),
                 ),
                 ListTile(
@@ -90,7 +90,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                     Icons.assessment,
                     color: colorC,
                   ),
-                  title: Text("Ranking Casos"),
+                  title: Text("Ranking casos clínicos"),
                   onTap: () => Modular.to.pushNamed('/profile'),
                 )
               ],
