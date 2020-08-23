@@ -8,6 +8,7 @@ import 'package:elis/app/modules/store/user_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import '../colors.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,6 +30,72 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
 
     return SafeArea(
       child: Scaffold(
+          drawer: Drawer(
+            child: Column(
+              children: [
+                Container(
+                  height: sw * 0.2,
+                  color: colorB,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.message,
+                    color: colorC,
+                  ),
+                  title: Text("Caso clínico"),
+                  onTap: () => Modular.to.pushNamed('/case'),
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.book,
+                    color: colorC,
+                  ),
+                  title: Text("Curso"),
+                  onTap: () => Modular.to.pushNamed('/curse'),
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.person_add,
+                    color: colorC,
+                  ),
+                  title: Text("Novo psicologo"),
+                  onTap: () => Modular.to.pushNamed('/profile'),
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.people,
+                    color: colorC,
+                  ),
+                  title: Text("Currículos"),
+                  onTap: () => Modular.to.pushNamed('/profile'),
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.comment,
+                    color: colorC,
+                  ),
+                  title: Text("Ranking Participações"),
+                  onTap: () => Modular.to.pushNamed('/profile'),
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.assessment,
+                    color: colorC,
+                  ),
+                  title: Text("Ranking Cursos"),
+                  onTap: () => Modular.to.pushNamed('/profile'),
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.assessment,
+                    color: colorC,
+                  ),
+                  title: Text("Ranking Casos"),
+                  onTap: () => Modular.to.pushNamed('/profile'),
+                )
+              ],
+            ),
+          ),
           backgroundColor: colorB,
           body: Observer(
             builder: (context) {
@@ -43,30 +110,6 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                       children: [
                         AppBarWidget(
                           title: user.user.email,
-                        ),
-                        CardProfileWidget(
-                          text: 'Novo Caso Clínico',
-                          onPressed: () {
-                            Modular.to.pushNamed('/case');
-                          },
-                        ),
-                        SizedBox(
-                          height: sh * 0.04,
-                        ),
-                        CardProfileWidget(
-                          text: 'Novo Curso',
-                          onPressed: () {
-                            Modular.to.pushNamed('/curse');
-                          },
-                        ),
-                        SizedBox(
-                          height: sh * 0.03,
-                        ),
-                        CardProfileWidget(
-                          text: 'Novo Psicólogo',
-                          onPressed: () {
-                            // Modular.to.pushReplacementNamed('/');
-                          },
                         ),
                       ],
                     ),
