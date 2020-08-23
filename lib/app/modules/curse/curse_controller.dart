@@ -34,7 +34,7 @@ abstract class _CurseControllerBase with Store {
           "local": local,
           //"dtcourse": dtcourse,
           //"dtcourse": DateTime.now(),
-          "dtcriation": DateTime.now(),
+          //"dtcriation": DateTime.now(),
           "atribute": false
         }));
     createPublicCurse();
@@ -51,7 +51,7 @@ abstract class _CurseControllerBase with Store {
               "local": local,
               //"dtcourse": dtcourse,
               // "dtcourse": DateTime.now(),
-              "dtcriation": DateTime.now(),
+              // "dtcriation": DateTime.now(),
               "atribute": false
             }));
   }

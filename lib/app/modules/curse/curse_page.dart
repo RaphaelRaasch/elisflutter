@@ -108,8 +108,8 @@ class _CursePageState extends ModularState<CursePage, CurseController> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //Comente
-          // controller.createCurse();
-          Modular.to.pushNamed('/home');
+          controller.createCurse();
+          Modular.to.pushReplacementNamed('/home');
         },
         child: Icon(
           Icons.add,
