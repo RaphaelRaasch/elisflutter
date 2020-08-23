@@ -32,7 +32,7 @@ class ListItemWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Titulo do Artigo',
+                      'Caso Clínico',
                       style: TextStyle(color: colorC, fontSize: sh * 0.02),
                     ),
                     Text(
@@ -53,7 +53,7 @@ class ListItemWidget extends StatelessWidget {
             ],
           ),
           Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in dui aliquet, semper tellus porttitor, egestas dui. Suspendisse potenti. Praesent mollis dapibus vehicula. Praesent quis dignissim justo.')
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in dui aliquet, semper tellus porttitor, egestas dui. Suspendisse potenti. Praesent mollis dapibus vehicula. Praesent quis dignissim justo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in dui aliquet, semper tellus porttitor, egestas dui. Suspendisse potenti. Praesent mollis dapibus vehicula. Praesent quis dignissim justo.')
         ],
       ),
     );

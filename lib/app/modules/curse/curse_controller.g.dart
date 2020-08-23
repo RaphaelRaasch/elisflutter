@@ -24,6 +24,36 @@ mixin _$CurseController on _CurseControllerBase, Store {
     });
   }
 
+  final _$titleAtom = Atom(name: '_CurseControllerBase.title');
+
+  @override
+  String get title {
+    _$titleAtom.reportRead();
+    return super.title;
+  }
+
+  @override
+  set title(String value) {
+    _$titleAtom.reportWrite(value, super.title, () {
+      super.title = value;
+    });
+  }
+
+  final _$descriptionAtom = Atom(name: '_CurseControllerBase.description');
+
+  @override
+  String get description {
+    _$descriptionAtom.reportRead();
+    return super.description;
+  }
+
+  @override
+  set description(String value) {
+    _$descriptionAtom.reportWrite(value, super.description, () {
+      super.description = value;
+    });
+  }
+
   final _$_CurseControllerBaseActionController =
       ActionController(name: '_CurseControllerBase');
 
@@ -41,7 +71,9 @@ mixin _$CurseController on _CurseControllerBase, Store {
   @override
   String toString() {
     return '''
-value: ${value}
+value: ${value},
+title: ${title},
+description: ${description}
     ''';
   }
 }

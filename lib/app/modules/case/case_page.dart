@@ -6,7 +6,7 @@ import 'case_controller.dart';
 
 class CasePage extends StatefulWidget {
   final String title;
-  const CasePage({Key key, this.title = "Case"}) : super(key: key);
+  const CasePage({Key key, this.title = "Caso Clínico"}) : super(key: key);
 
   @override
   _CasePageState createState() => _CasePageState();
@@ -48,7 +48,7 @@ class _CasePageState extends ModularState<CasePage, CaseController> {
                     },
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Nome',
+                      hintText: 'Título',
                     ),
                   ),
                 ),
