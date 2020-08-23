@@ -49,7 +49,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                           },
                         ),
                         SizedBox(
-                          height: sh * 0.03,
+                          height: sh * 0.04,
                         ),
                         CardProfileWidget(
                           text: 'Novo Curso',
