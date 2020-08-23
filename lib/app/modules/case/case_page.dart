@@ -36,6 +36,14 @@ class _CasePageState extends ModularState<CasePage, CaseController> {
                   height: sh * 0.06,
                 ),
                 SizedBox(width: sw),
+                controller.error == true
+                    ? Text("Preencha os campos obrigatórios!",
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 15,
+                        ))
+                    : SizedBox(width: sw),
+                SizedBox(width: sw),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: sw * 0.03),
                   width: sw * 0.8,
@@ -85,7 +93,7 @@ class _CasePageState extends ModularState<CasePage, CaseController> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           controller.createCase();
-          Modular.to.pushReplacementNamed('/home');
+          //Modular.to.pushReplacementNamed('/home');
         },
         child: Icon(
           Icons.add,
