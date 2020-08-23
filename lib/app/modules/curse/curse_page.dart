@@ -64,7 +64,7 @@ class _CursePageState extends ModularState<CursePage, CurseController> {
                       borderRadius: BorderRadius.circular(sh * 0.02)),
                   child: TextFormField(
                     onChanged: (value) {
-                      controller.title = value;
+                      controller.local = value;
                     },
                     decoration: InputDecoration(
                         border: InputBorder.none,
@@ -109,7 +109,7 @@ class _CursePageState extends ModularState<CursePage, CurseController> {
         onPressed: () {
           //Comente
           // controller.createCurse();
-          Modular.to.pushReplacementNamed('/home');
+          Modular.to.pushNamed('/home');
         },
         child: Icon(
           Icons.add,

@@ -9,21 +9,6 @@ part of 'curse_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$CurseController on _CurseControllerBase, Store {
-  final _$valueAtom = Atom(name: '_CurseControllerBase.value');
-
-  @override
-  int get value {
-    _$valueAtom.reportRead();
-    return super.value;
-  }
-
-  @override
-  set value(int value) {
-    _$valueAtom.reportWrite(value, super.value, () {
-      super.value = value;
-    });
-  }
-
   final _$titleAtom = Atom(name: '_CurseControllerBase.title');
 
   @override
@@ -54,26 +39,43 @@ mixin _$CurseController on _CurseControllerBase, Store {
     });
   }
 
-  final _$_CurseControllerBaseActionController =
-      ActionController(name: '_CurseControllerBase');
+  final _$localAtom = Atom(name: '_CurseControllerBase.local');
 
   @override
-  void increment() {
-    final _$actionInfo = _$_CurseControllerBaseActionController.startAction(
-        name: '_CurseControllerBase.increment');
-    try {
-      return super.increment();
-    } finally {
-      _$_CurseControllerBaseActionController.endAction(_$actionInfo);
-    }
+  String get local {
+    _$localAtom.reportRead();
+    return super.local;
+  }
+
+  @override
+  set local(String value) {
+    _$localAtom.reportWrite(value, super.local, () {
+      super.local = value;
+    });
+  }
+
+  final _$createCurseAsyncAction =
+      AsyncAction('_CurseControllerBase.createCurse');
+
+  @override
+  Future<dynamic> createCurse() {
+    return _$createCurseAsyncAction.run(() => super.createCurse());
+  }
+
+  final _$createPublicCurseAsyncAction =
+      AsyncAction('_CurseControllerBase.createPublicCurse');
+
+  @override
+  Future<dynamic> createPublicCurse() {
+    return _$createPublicCurseAsyncAction.run(() => super.createPublicCurse());
   }
 
   @override
   String toString() {
     return '''
-value: ${value},
 title: ${title},
-description: ${description}
+description: ${description},
+local: ${local}
     ''';
   }
 }
