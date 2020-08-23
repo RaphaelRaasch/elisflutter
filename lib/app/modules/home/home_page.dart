@@ -45,18 +45,27 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                           title: user.user.email,
                         ),
                         CardProfileWidget(
-                          text: 'CASO CLINICO',
+                          text: 'Novo Caso Clínico',
                           onPressed: () {
-                            Modular.to.pushReplacementNamed('/case');
+                            Modular.to.pushNamed('/case');
+                          },
+                        ),
+                        SizedBox(
+                          height: sh * 0.04,
+                        ),
+                        CardProfileWidget(
+                          text: 'Novo Curso',
+                          onPressed: () {
+                            Modular.to.pushNamed('/curse');
                           },
                         ),
                         SizedBox(
                           height: sh * 0.03,
                         ),
                         CardProfileWidget(
-                          text: 'CURSO',
+                          text: 'Novo Psicólogo',
                           onPressed: () {
-                            Modular.to.pushReplacementNamed('/curse');
+                            // Modular.to.pushReplacementNamed('/');
                           },
                         ),
                       ],

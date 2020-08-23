@@ -7,7 +7,7 @@ import 'auth_controller.dart';
 
 class AuthPage extends StatefulWidget {
   final String title;
-  const AuthPage({Key key, this.title = "Auth"}) : super(key: key);
+  const AuthPage({Key key, this.title = "ConectaPsi"}) : super(key: key);
 
   @override
   _AuthPageState createState() => _AuthPageState();
@@ -48,7 +48,7 @@ class _AuthPageState extends ModularState<AuthPage, AuthController> {
                               width: sw,
                             ),
                             FormWidget(
-                              hint: 'Email',
+                              hint: 'E-mail',
                               obscure: false,
                               onChanged: (value) {
                                 controller.email = value;
@@ -59,7 +59,7 @@ class _AuthPageState extends ModularState<AuthPage, AuthController> {
                               height: sh * 0.03,
                             ),
                             FormWidget(
-                              hint: 'Password',
+                              hint: 'Senha',
                               obscure: true,
                               onChanged: (value) {
                                 controller.password = value;
@@ -69,7 +69,7 @@ class _AuthPageState extends ModularState<AuthPage, AuthController> {
                             controller.error == false
                                 ? SizedBox()
                                 : Text(
-                                    'Usuario ou senha invalidos',
+                                    'Usuário ou senha inválidos',
                                     style: TextStyle(
                                       color: Colors.red,
                                     ),

@@ -7,7 +7,8 @@ import 'profile_controller.dart';
 
 class ProfilePage extends StatefulWidget {
   final String title;
-  const ProfilePage({Key key, this.title = "Profile"}) : super(key: key);
+  const ProfilePage({Key key, this.title = "Cadastro Psicólogo"})
+      : super(key: key);
 
   @override
   _ProfilePageState createState() => _ProfilePageState();
@@ -35,7 +36,7 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
                 child: Column(
                   children: [
                     FormWidget(
-                      hint: 'Name',
+                      hint: 'Nome',
                       onChanged: (value) {
                         controller.name = value;
                       },
@@ -43,7 +44,7 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
                     ),
                     SizedBox(height: sh * 0.01),
                     FormWidget(
-                      hint: 'Email',
+                      hint: 'E-mail',
                       onChanged: (value) {
                         controller.email = value;
                       },
@@ -51,7 +52,7 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
                     ),
                     SizedBox(height: sh * 0.01),
                     FormWidget(
-                      hint: 'Password',
+                      hint: 'Senha',
                       onChanged: (value) {
                         controller.password = value;
                       },
@@ -59,7 +60,7 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
                     ),
                     SizedBox(height: sh * 0.01),
                     FormWidget(
-                      hint: 'confirm Password',
+                      hint: 'Confirmar senha',
                       onChanged: (value) {
                         controller.confirmPassword = value;
                       },

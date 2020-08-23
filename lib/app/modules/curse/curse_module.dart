@@ -6,7 +6,7 @@ import 'curse_page.dart';
 class CurseModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        Bind((i) => CurseController()),
+        Bind((i) => CurseController(Modular.get())),
       ];
 
   @override
