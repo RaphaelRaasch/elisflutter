@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "499400968722",
+    "firebase_url": "https://psicho-29d1e.firebaseio.com",
+    "project_id": "psicho-29d1e",
+    "storage_bucket": "psicho-29d1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499400968722:android:8c98507d78609bb5d826cb",
+        "android_client_info": {
+          "package_name": "com.raasch.elis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499400968722-7s3v5ocn2cj9iod7uei0rc56csaemr7p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYlB3p8KDKN6WjXOUta3yKU7qefYZRgUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499400968722-7s3v5ocn2cj9iod7uei0rc56csaemr7p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

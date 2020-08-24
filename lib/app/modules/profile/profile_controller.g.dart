@@ -92,12 +92,11 @@ mixin _$ProfileController on _ProfileControllerBase, Store {
     return _$signUpAsyncAction.run(() => super.signUp());
   }
 
-  final _$createUserAsyncAction =
-      AsyncAction('_ProfileControllerBase.createUser');
+  final _$addUserAsyncAction = AsyncAction('_ProfileControllerBase.addUser');
 
   @override
-  Future<dynamic> createUser() {
-    return _$createUserAsyncAction.run(() => super.createUser());
+  Future<dynamic> addUser() {
+    return _$addUserAsyncAction.run(() => super.addUser());
   }
 
   @override

@@ -1,9 +1,4 @@
-import 'list_profile/list_profile_controller.dart';
-
-import 'curse/curse_controller.dart';
-import 'card_profile/card_profile_controller.dart';
-import 'list_item/list_item_controller.dart';
-import 'app_bar/app_bar_controller.dart';
+import 'widgets/drawer/drawer_controller.dart';
 import 'home_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:dio/dio.dart';
@@ -12,11 +7,7 @@ import 'home_page.dart';
 class HomeModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        Bind((i) => ListProfileController()),
-        Bind((i) => CurseController()),
-        Bind((i) => CardProfileController()),
-        Bind((i) => ListItemController()),
-        Bind((i) => AppBarController()),
+        Bind((i) => DrawerController()),
         Bind((i) => HomeController()),
       ];
 

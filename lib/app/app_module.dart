@@ -1,20 +1,22 @@
 import 'package:elis/app/modules/auth/auth_module.dart';
-import 'package:elis/app/modules/case/case_module.dart';
-import 'package:elis/app/modules/curse/curse_module.dart';
-import 'package:elis/app/modules/profile/profile_module.dart';
+import 'package:elis/app/modules/caso_clinico/caso_clinico_module.dart';
+import 'package:elis/app/modules/curso/curso_module.dart';
 
 import 'app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 import 'package:elis/app/app_widget.dart';
-import 'package:elis/app/modules/home/home_module.dart';
 
+import 'modules/home/home_module.dart';
+import 'modules/profile/profile_module.dart';
+import 'modules/store/curse_store.dart';
 import 'modules/store/user_store.dart';
 import 'modules/store/case_store.dart';
 
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
+        Bind((i) => CurseStore()),
         Bind((i) => CaseStore()),
         Bind((i) => UserStore()),
         Bind((i) => AppController()),
@@ -23,10 +25,10 @@ class AppModule extends MainModule {
   @override
   List<Router> get routers => [
         Router('/', module: AuthModule()),
-        Router('/profile', module: ProfileModule()),
         Router('/home', module: HomeModule()),
-        Router('/case', module: CaseModule()),
-        Router('/curse', module: CurseModule()),
+        Router('/caso', module: CasoClinicoModule()),
+        Router('/curso', module: CursoModule()),
+        Router('/profile', module: ProfileModule()),
       ];
 
   @override

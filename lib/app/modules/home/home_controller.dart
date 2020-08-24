@@ -6,11 +6,10 @@ class HomeController = _HomeControllerBase with _$HomeController;
 
 abstract class _HomeControllerBase with Store {
   @observable
-
-  @observable
-  String type = '';
+  int value = 0;
 
   @action
-  void setOpenCard() {
+  void increment() {
+    value++;
   }
 }

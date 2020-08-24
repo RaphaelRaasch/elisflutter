@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:http/http.dart' as http;
 import 'package:mobx/mobx.dart';
@@ -35,7 +36,8 @@ abstract class _ProfileControllerBase with Store {
         return;
       } else {
         token = json.decode(response.body)["localId"];
-        createUser();
+        Modular.to.pushReplacementNamed('/');
+        addUser();
       }
     } else {
       return;
@@ -43,14 +45,12 @@ abstract class _ProfileControllerBase with Store {
   }
 
   @action
-  Future createUser() async {
-    var response = await http.post(
-        'https://psicho-29d1e.firebaseio.com/$token/profile.json',
-        body: json.encode({"name": name, "email": email}));
-    if (response.statusCode == 200) {
-      Modular.to.pushReplacementNamed('/');
-    } else {
-      return;
-    }
+  Future addUser() async {
+    Firestore.instance.collection('profile').document(token).setData({
+      'name': name,
+      'email': email,
+      'token': token,
+      'gestor': false,
+    });
   }
 }

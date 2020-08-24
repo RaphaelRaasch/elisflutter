@@ -28,8 +28,6 @@ abstract class _AuthControllerBase with Store {
   @observable
   bool loading = false;
 
-
-
   Future signIn() async {
     loading = true;
     final response = await http.post(auth_URL,
