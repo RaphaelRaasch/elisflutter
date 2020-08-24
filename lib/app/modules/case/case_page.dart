@@ -56,7 +56,7 @@ class _CasePageState extends ModularState<CasePage, CaseController> {
                     },
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Título',
+                      hintText: 'Título *',
                     ),
                   ),
                 ),
@@ -81,7 +81,7 @@ class _CasePageState extends ModularState<CasePage, CaseController> {
                     },
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Descrição',
+                      hintText: 'Descrição *',
                     ),
                   ),
                 ),
