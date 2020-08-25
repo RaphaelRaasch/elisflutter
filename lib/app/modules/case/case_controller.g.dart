@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'caso_clinico_controller.dart';
+part of 'case_controller.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,8 +8,8 @@ part of 'caso_clinico_controller.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$CasoClinicoController on _CasoClinicoControllerBase, Store {
-  final _$titleAtom = Atom(name: '_CasoClinicoControllerBase.title');
+mixin _$CaseController on _CaseControllerBase, Store {
+  final _$titleAtom = Atom(name: '_CaseControllerBase.title');
 
   @override
   String get title {
@@ -24,8 +24,7 @@ mixin _$CasoClinicoController on _CasoClinicoControllerBase, Store {
     });
   }
 
-  final _$descriptionAtom =
-      Atom(name: '_CasoClinicoControllerBase.description');
+  final _$descriptionAtom = Atom(name: '_CaseControllerBase.description');
 
   @override
   String get description {
@@ -40,10 +39,6 @@ mixin _$CasoClinicoController on _CasoClinicoControllerBase, Store {
     });
   }
 
-<<<<<<< HEAD:lib/app/modules/caso_clinico/caso_clinico_controller.g.dart
-  final _$addCasoAsyncAction =
-      AsyncAction('_CasoClinicoControllerBase.addCaso');
-=======
   final _$errorAtom = Atom(name: '_CaseControllerBase.error');
 
   @override
@@ -60,19 +55,18 @@ mixin _$CasoClinicoController on _CasoClinicoControllerBase, Store {
   }
 
   final _$createCaseAsyncAction = AsyncAction('_CaseControllerBase.createCase');
->>>>>>> 1a6e554f155a1d58df31788ea38384be1605e467:lib/app/modules/case/case_controller.g.dart
 
   @override
-  Future<dynamic> addCaso() {
-    return _$addCasoAsyncAction.run(() => super.addCaso());
+  Future<dynamic> createCase() {
+    return _$createCaseAsyncAction.run(() => super.createCase());
   }
 
-  final _$addPublicCasoAsyncAction =
-      AsyncAction('_CasoClinicoControllerBase.addPublicCaso');
+  final _$createPublicCaseAsyncAction =
+      AsyncAction('_CaseControllerBase.createPublicCase');
 
   @override
-  Future<dynamic> addPublicCaso() {
-    return _$addPublicCasoAsyncAction.run(() => super.addPublicCaso());
+  Future<dynamic> createPublicCase() {
+    return _$createPublicCaseAsyncAction.run(() => super.createPublicCase());
   }
 
   @override
