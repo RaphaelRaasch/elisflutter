@@ -1,6 +1,7 @@
 import 'package:elis/app/modules/auth/auth_module.dart';
 import 'package:elis/app/modules/caso_clinico/caso_clinico_module.dart';
 import 'package:elis/app/modules/curso/curso_module.dart';
+import 'package:elis/app/modules/user_profile/user_profile_module.dart';
 
 import 'app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -11,7 +12,6 @@ import 'modules/home/home_module.dart';
 import 'modules/profile/profile_module.dart';
 
 import 'modules/store/user_store.dart';
-
 
 class AppModule extends MainModule {
   @override
@@ -27,6 +27,7 @@ class AppModule extends MainModule {
         Router('/caso', module: CasoClinicoModule()),
         Router('/curso', module: CursoModule()),
         Router('/profile', module: ProfileModule()),
+        Router('/userprofile', module: UserProfileModule()),
       ];
 
   @override

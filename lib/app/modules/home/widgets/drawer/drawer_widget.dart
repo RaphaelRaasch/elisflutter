@@ -26,7 +26,14 @@ class DrawerWidget extends StatelessWidget {
             onTap: () {
               Modular.to.pushNamed('/curso/');
             },
-          )
+          ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text('Profile'),
+            onTap: () {
+              Modular.to.pushNamed('/userprofile');
+            },
+          ),
         ],
       ),
     );
