@@ -27,13 +27,13 @@ mixin _$CursoController on _CursoControllerBase, Store {
   final _$dataAtom = Atom(name: '_CursoControllerBase.data');
 
   @override
-  dynamic get data {
+  String get data {
     _$dataAtom.reportRead();
     return super.data;
   }
 
   @override
-  set data(dynamic value) {
+  set data(String value) {
     _$dataAtom.reportWrite(value, super.data, () {
       super.data = value;
     });

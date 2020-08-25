@@ -10,7 +10,7 @@ abstract class _CursoControllerBase with Store {
   @observable
   String title = '';
   @observable
-  var data;
+  String data;
   @observable
   String local = '';
   @observable
@@ -22,7 +22,7 @@ abstract class _CursoControllerBase with Store {
   Future addCurso() async {
     await Firestore.instance.collection('cursos').document().setData({
       'titulo': title,
-      'data': Timestamp.now(),
+      'data': data,
       'local': local,
       'tempo': horas,
       'description': description,

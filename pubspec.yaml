@@ -21,6 +21,9 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  mask_shifter: ^0.1.0
+  date_time_picker: ^1.0.1
+  date_picker_timeline: ^1.2.1
   cloud_firestore: ^0.13.7
   http: ^0.12.2
   dio: ^3.0.10

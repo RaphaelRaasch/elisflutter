@@ -5,15 +5,15 @@ class CursoModel {
   String titulo;
   String description;
   String local;
-  int horas;
-  Timestamp data;
+  int tempo;
+  String data;
 
   CursoModel.fromDocument(DocumentSnapshot snapshot) {
     id = snapshot.documentID;
     titulo = snapshot['titulo'];
     description = snapshot['description'];
     local = snapshot['local'];
-    horas = snapshot['horas'];
+    tempo = snapshot['tempo'];
     data = snapshot['data'];
   }
 }

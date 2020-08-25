@@ -50,7 +50,7 @@ class _CasoClinicoPageState
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Descrição',
+                        hintText: 'Titulo',
                       ),
                     ),
                   ),

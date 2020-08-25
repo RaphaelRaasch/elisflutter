@@ -9,15 +9,13 @@ import 'package:elis/app/app_widget.dart';
 
 import 'modules/home/home_module.dart';
 import 'modules/profile/profile_module.dart';
-import 'modules/store/curse_store.dart';
+
 import 'modules/store/user_store.dart';
-import 'modules/store/case_store.dart';
+
 
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
-        Bind((i) => CurseStore()),
-        Bind((i) => CaseStore()),
         Bind((i) => UserStore()),
         Bind((i) => AppController()),
       ];

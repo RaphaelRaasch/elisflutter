@@ -40,7 +40,9 @@ class _ListaCasoPageState
                 return CasoWidget(
                   title: caso.titulo,
                   description: caso.description,
-                  onPressed: () {},
+                  onPressed: () {
+                    Modular.to.pushNamed('/caso/comment', arguments: caso);
+                  },
                 );
               },
             ),

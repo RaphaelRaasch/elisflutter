@@ -28,15 +28,18 @@ class _ListCursoPageState
         builder: (context) {
           controller.getCurso();
           return ListView.builder(
-              itemCount: controller.cursos.length,
-              itemBuilder: (context, index) {
-                var curso = controller.cursos[index];
-                return CursoWidget(
-                  title: curso.titulo,
-                  
-                  description: curso.description,
-                );
-              });
+            itemCount: controller.cursos.length,
+            itemBuilder: (context, index) {
+              var curso = controller.cursos[index];
+              return CursoWidget(
+                title: curso.titulo,
+                data: curso.data,
+                description: curso.description,
+                duracao: curso.tempo.toString(),
+                local: curso.local,
+              );
+            },
+          );
         },
       ),
       floatingActionButton: FloatingActionButton(
