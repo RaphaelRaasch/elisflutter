@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elis/app/modules/model/comment_model.dart';
-import 'package:elis/app/modules/model/caso_model.dart';
+import 'package:elis/app/modules/model/curso_model.dart';
 import 'package:elis/app/modules/store/user_store.dart';
 import 'package:mobx/mobx.dart';
 
@@ -25,7 +25,7 @@ abstract class _CommentControllerBase with Store {
   @action
   Future getComments() async {
     final QuerySnapshot comment = await Firestore.instance
-        .collection('casos')
+        .collection('cursos')
         .document(id)
         .collection('comment')
         .getDocuments();
@@ -37,7 +37,7 @@ abstract class _CommentControllerBase with Store {
   @action
   Future addcomment() async {
     await Firestore.instance
-        .collection('casos')
+        .collection('cursos')
         .document(id)
         .collection('comment')
         .document()
@@ -47,7 +47,7 @@ abstract class _CommentControllerBase with Store {
   @action
   Future removecomment() async {
     await Firestore.instance
-        .collection('casos')
+        .collection('cursos')
         .document(id)
         .collection('comment')
         .document(documentId)
