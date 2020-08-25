@@ -15,6 +15,8 @@ abstract class _CommentControllerBase with Store {
   String comment;
   @observable
   String id;
+  @observable
+  String documentId;
 
   List<CommentModel> model;
 
@@ -40,5 +42,15 @@ abstract class _CommentControllerBase with Store {
         .collection('comment')
         .document()
         .setData({'comment': comment, 'user': userStore.user.email});
+  }
+
+  @action
+  Future removecomment() async {
+    await Firestore.instance
+        .collection('casos')
+        .document(id)
+        .collection('comment')
+        .document(documentId)
+        .delete();
   }
 }

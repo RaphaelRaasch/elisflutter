@@ -39,6 +39,21 @@ mixin _$CommentController on _CommentControllerBase, Store {
     });
   }
 
+  final _$documentIdAtom = Atom(name: '_CommentControllerBase.documentId');
+
+  @override
+  String get documentId {
+    _$documentIdAtom.reportRead();
+    return super.documentId;
+  }
+
+  @override
+  set documentId(String value) {
+    _$documentIdAtom.reportWrite(value, super.documentId, () {
+      super.documentId = value;
+    });
+  }
+
   final _$commentsAtom = Atom(name: '_CommentControllerBase.comments');
 
   @override
@@ -70,11 +85,20 @@ mixin _$CommentController on _CommentControllerBase, Store {
     return _$addcommentAsyncAction.run(() => super.addcomment());
   }
 
+  final _$removecommentAsyncAction =
+      AsyncAction('_CommentControllerBase.removecomment');
+
+  @override
+  Future<dynamic> removecomment() {
+    return _$removecommentAsyncAction.run(() => super.removecomment());
+  }
+
   @override
   String toString() {
     return '''
 comment: ${comment},
 id: ${id},
+documentId: ${documentId},
 comments: ${comments}
     ''';
   }

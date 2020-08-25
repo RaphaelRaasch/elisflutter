@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elis/app/modules/colors.dart';
 import 'package:elis/app/modules/model/caso_model.dart';
+import 'package:elis/app/modules/store/user_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -17,6 +19,7 @@ class CommentPage extends StatefulWidget {
 
 class _CommentPageState extends ModularState<CommentPage, CommentController> {
   //use 'controller' variable to access controller
+  UserStore userStore = Modular.get();
 
   @override
   Widget build(BuildContext context) {
@@ -34,32 +37,44 @@ class _CommentPageState extends ModularState<CommentPage, CommentController> {
           controller.getComments();
           return SingleChildScrollView(
             child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Container(
-                    height: sh * 0.6,
-                    child: ListView.builder(
-                      itemCount: controller.comments.length,
-                      itemBuilder: (context, index) {
-                        var comments = controller.comments[index];
-                        return ListTile(
-                          title: Text(comments.user),
-                          subtitle: Text(comments.comment),
-                        );
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    height: sh * 0.03,
-                  ),
-                  TextField(
-                    onChanged: (value) {
-                      controller.comment = value;
-                      print(value);
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Container(
+                  height: sh * 0.6,
+                  child: ListView.builder(
+                    itemCount: controller.comments.length,
+                    itemBuilder: (context, index) {
+                      var comments = controller.comments[index];
+                      return ListTile(
+                        title: Text(comments.user),
+                        subtitle: Text(comments.comment),
+                        trailing: comments.user == userStore.user.email
+                            ? IconButton(
+                                icon: Icon(
+                                  Icons.delete,
+                                  color: Colors.red,
+                                ),
+                                onPressed: () {
+                                  controller.documentId = comments.id;
+                                  controller.removecomment();
+                                })
+                            : SizedBox(),
+                      );
                     },
-                    decoration: InputDecoration(hintText: 'Comentario'),
-                  )
-                ]),
+                  ),
+                ),
+                SizedBox(
+                  height: sh * 0.03,
+                ),
+                TextField(
+                  onChanged: (value) {
+                    controller.comment = value;
+                    print(value);
+                  },
+                  decoration: InputDecoration(hintText: 'Comentario'),
+                )
+              ],
+            ),
           );
         },
       ),
