@@ -40,27 +40,8 @@ mixin _$CasoClinicoController on _CasoClinicoControllerBase, Store {
     });
   }
 
-<<<<<<< HEAD:lib/app/modules/caso_clinico/caso_clinico_controller.g.dart
   final _$addCasoAsyncAction =
       AsyncAction('_CasoClinicoControllerBase.addCaso');
-=======
-  final _$errorAtom = Atom(name: '_CaseControllerBase.error');
-
-  @override
-  bool get error {
-    _$errorAtom.reportRead();
-    return super.error;
-  }
-
-  @override
-  set error(bool value) {
-    _$errorAtom.reportWrite(value, super.error, () {
-      super.error = value;
-    });
-  }
-
-  final _$createCaseAsyncAction = AsyncAction('_CaseControllerBase.createCase');
->>>>>>> 1a6e554f155a1d58df31788ea38384be1605e467:lib/app/modules/case/case_controller.g.dart
 
   @override
   Future<dynamic> addCaso() {

@@ -54,7 +54,6 @@ mixin _$CursoController on _CursoControllerBase, Store {
     });
   }
 
-<<<<<<< HEAD:lib/app/modules/curso/curso_controller.g.dart
   final _$descriptionAtom = Atom(name: '_CursoControllerBase.description');
 
   @override
@@ -77,25 +76,6 @@ mixin _$CursoController on _CursoControllerBase, Store {
     _$horasAtom.reportRead();
     return super.horas;
   }
-=======
-  final _$errorAtom = Atom(name: '_CurseControllerBase.error');
-
-  @override
-  bool get error {
-    _$errorAtom.reportRead();
-    return super.error;
-  }
-
-  @override
-  set error(bool value) {
-    _$errorAtom.reportWrite(value, super.error, () {
-      super.error = value;
-    });
-  }
-
-  final _$createCurseAsyncAction =
-      AsyncAction('_CurseControllerBase.createCurse');
->>>>>>> 1a6e554f155a1d58df31788ea38384be1605e467:lib/app/modules/curse/curse_controller.g.dart
 
   @override
   set horas(int value) {
@@ -118,12 +98,7 @@ title: ${title},
 data: ${data},
 local: ${local},
 description: ${description},
-<<<<<<< HEAD:lib/app/modules/curso/curso_controller.g.dart
 horas: ${horas}
-=======
-local: ${local},
-error: ${error}
->>>>>>> 1a6e554f155a1d58df31788ea38384be1605e467:lib/app/modules/curse/curse_controller.g.dart
     ''';
   }
 }
