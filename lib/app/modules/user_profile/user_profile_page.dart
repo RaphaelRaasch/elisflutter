@@ -1,5 +1,7 @@
 import 'package:elis/app/modules/colors.dart';
+import 'package:elis/app/modules/user_profile/form_card/form_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'user_profile_controller.dart';
 
@@ -26,79 +28,56 @@ class _UserProfilePageState
         backgroundColor: colorA,
         elevation: 0,
       ),
-      body: Container(
-        padding:
-            EdgeInsets.symmetric(horizontal: sw * 0.05, vertical: sh * 0.03),
-        width: sw,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Nome: Raphael',
-              style: TextStyle(color: colorA, fontSize: sh * 0.02),
-            ),
-            Text(
-              'Email: raaschraphael@gmail.com',
-              style: TextStyle(color: colorA, fontSize: sh * 0.02),
-            ),
-            Text(
-              'CRP: 4545316513561',
-              style: TextStyle(color: colorA, fontSize: sh * 0.02),
-            ),
-            SizedBox(
-              height: sh * 0.05,
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(
-                  vertical: sh * 0.02, horizontal: sw * 0.03),
-              height: sh * 0.2,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 2,
-                    color: Colors.black12,
-                    offset: Offset(2, 2),
-                  )
-                ],
+      body: Observer(builder: (context) {
+        controller.getFormacao();
+        return Container(
+          padding:
+              EdgeInsets.symmetric(horizontal: sw * 0.05, vertical: sh * 0.03),
+          width: sw,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Nome: Raphael',
+                style: TextStyle(color: colorA, fontSize: sh * 0.02),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: sw,
-                  ),
-                  Text(
-                    'Instituição: Universidade Federal de Ouro Preto',
-                    style: TextStyle(color: colorA, fontSize: sh * 0.02),
-                  ),
-                  Text(
-                    'Titulo: Psicologia Infatil',
-                    style: TextStyle(color: colorA, fontSize: sh * 0.02),
-                  ),
-                  Expanded(child: SizedBox()),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.edit),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          Icons.delete,
-                          color: Colors.red,
-                        ),
-                        onPressed: () {},
-                      ),
-                    ],
-                  )
-                ],
+              Text(
+                'Email: raaschraphael@gmail.com',
+                style: TextStyle(color: colorA, fontSize: sh * 0.02),
               ),
-            )
-          ],
+              Text(
+                'CRP: 4545316513561',
+                style: TextStyle(color: colorA, fontSize: sh * 0.02),
+              ),
+              SizedBox(
+                height: sh * 0.05,
+              ),
+              Container(
+                height: sh * 0.6,
+                child: ListView.builder(
+                  itemCount: controller.formacao.length,
+                  itemBuilder: (context, index) {
+                    var formacao = controller.formacao[index];
+                    return FormCardWidget(
+                      titulo: 'Titulo: ${formacao.titulo}',
+                      instituicao: 'Instituicao: ${formacao.instituicao}',
+                    );
+                  },
+                ),
+              )
+            ],
+          ),
+        );
+      }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          controller.addFormacao();
+        },
+        child: Icon(
+          Icons.add,
+          color: colorA,
         ),
+        backgroundColor: Colors.white,
       ),
     );
   }
