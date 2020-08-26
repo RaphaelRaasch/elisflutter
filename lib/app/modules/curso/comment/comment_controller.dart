@@ -36,6 +36,7 @@ abstract class _CommentControllerBase with Store {
 
   @action
   Future addcomment() async {
+<<<<<<< HEAD
     if (comment.isEmpty) {
       return;
     } else {
@@ -46,6 +47,14 @@ abstract class _CommentControllerBase with Store {
           .document()
           .setData({'comment': comment, 'user': userStore.user.email});
     }
+=======
+    await Firestore.instance
+        .collection('cursos')
+        .document(id)
+        .collection('comment')
+        .document()
+        .setData({'comment': comment, 'user': userStore.user.email});
+>>>>>>> 9c1ae7d4d7783db79fc5292ea8af323bc6cccec9
   }
 
   @action
