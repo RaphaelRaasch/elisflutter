@@ -7,7 +7,7 @@ import 'list_curso_controller.dart';
 
 class ListCursoPage extends StatefulWidget {
   final String title;
-  const ListCursoPage({Key key, this.title = "ListCurso"}) : super(key: key);
+  const ListCursoPage({Key key, this.title = "Cursos"}) : super(key: key);
 
   @override
   _ListCursoPageState createState() => _ListCursoPageState();
@@ -37,6 +37,9 @@ class _ListCursoPageState
                 description: curso.description,
                 duracao: curso.tempo.toString(),
                 local: curso.local,
+                onPressed: () {
+                  Modular.to.pushNamed('/curso/comment', arguments: curso);
+                },
               );
             },
           );

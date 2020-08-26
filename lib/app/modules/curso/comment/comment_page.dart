@@ -1,16 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elis/app/modules/colors.dart';
-import 'package:elis/app/modules/model/caso_model.dart';
+import 'package:elis/app/modules/model/curso_model.dart';
 import 'package:elis/app/modules/store/user_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import '../../model/curso_model.dart';
 import 'comment_controller.dart';
 
 class CommentPage extends StatefulWidget {
   final String title;
-  final CasoModel caso;
-  const CommentPage({Key key, this.title = "Comment", this.caso})
+  final CursoModel curso;
+  const CommentPage({Key key, this.title = "Comentários", this.curso})
       : super(key: key);
 
   @override
@@ -33,7 +34,7 @@ class _CommentPageState extends ModularState<CommentPage, CommentController> {
       ),
       body: Observer(
         builder: (context) {
-          controller.id = widget.caso.id;
+          controller.id = widget.curso.id;
           controller.getComments();
           return SingleChildScrollView(
             child: Column(
@@ -71,7 +72,7 @@ class _CommentPageState extends ModularState<CommentPage, CommentController> {
                     controller.comment = value;
                     print(value);
                   },
-                  decoration: InputDecoration(hintText: 'Comentario'),
+                  decoration: InputDecoration(hintText: 'Comentário'),
                 )
               ],
             ),

@@ -14,7 +14,7 @@ abstract class _CursoControllerBase with Store {
   @action
   Future getCollects() async {
     final QuerySnapshot coleta =
-        await Firestore.instance.collection('casos').getDocuments();
+        await Firestore.instance.collection('cursos').getDocuments();
     cursos =
         coleta.documents.map((data) => CursoModel.fromDocument(data)).toList();
   }

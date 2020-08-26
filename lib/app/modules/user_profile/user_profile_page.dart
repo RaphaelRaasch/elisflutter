@@ -49,6 +49,8 @@ class _UserProfilePageState
               height: sh * 0.05,
             ),
             Container(
+              padding: EdgeInsets.symmetric(
+                  vertical: sh * 0.02, horizontal: sw * 0.03),
               height: sh * 0.2,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -57,6 +59,40 @@ class _UserProfilePageState
                     blurRadius: 2,
                     color: Colors.black12,
                     offset: Offset(2, 2),
+                  )
+                ],
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: sw,
+                  ),
+                  Text(
+                    'Instituição: Universidade Federal de Ouro Preto',
+                    style: TextStyle(color: colorA, fontSize: sh * 0.02),
+                  ),
+                  Text(
+                    'Titulo: Psicologia Infatil',
+                    style: TextStyle(color: colorA, fontSize: sh * 0.02),
+                  ),
+                  Expanded(child: SizedBox()),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.edit),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.delete,
+                          color: Colors.red,
+                        ),
+                        onPressed: () {},
+                      ),
+                    ],
                   )
                 ],
               ),
