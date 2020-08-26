@@ -21,19 +21,30 @@ abstract class _UserProfileControllerBase with Store {
   String crp = '';
   @observable
   bool gestor = false;
+  @observable
+  String instituicao = '';
+  @observable
+  String title = '';
+  @observable
+  bool card = false;
 
   @action
   Future addFormacao() async {
-    Firestore.instance
-        .collection('profile')
-        .document(userStore.user.localId)
-        .collection('formacao')
-        .document()
-        .setData({
-      "instituicao": "universidade Federal de ouro preto",
-      "titulo": "Psicologia Infantil",
-      "concluido": false,
-    });
+    if (card == false) {
+      card = true;
+    } else {
+      Firestore.instance
+          .collection('profile')
+          .document(userStore.user.localId)
+          .collection('formacao')
+          .document()
+          .setData({
+        "instituicao": instituicao,
+        "titulo": title,
+        "concluido": false,
+      });
+      card = false;
+    }
   }
 
   List<ProfileModel> pmodel;

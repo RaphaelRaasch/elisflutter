@@ -69,6 +69,52 @@ mixin _$UserProfileController on _UserProfileControllerBase, Store {
     });
   }
 
+  final _$instituicaoAtom =
+      Atom(name: '_UserProfileControllerBase.instituicao');
+
+  @override
+  String get instituicao {
+    _$instituicaoAtom.reportRead();
+    return super.instituicao;
+  }
+
+  @override
+  set instituicao(String value) {
+    _$instituicaoAtom.reportWrite(value, super.instituicao, () {
+      super.instituicao = value;
+    });
+  }
+
+  final _$titleAtom = Atom(name: '_UserProfileControllerBase.title');
+
+  @override
+  String get title {
+    _$titleAtom.reportRead();
+    return super.title;
+  }
+
+  @override
+  set title(String value) {
+    _$titleAtom.reportWrite(value, super.title, () {
+      super.title = value;
+    });
+  }
+
+  final _$cardAtom = Atom(name: '_UserProfileControllerBase.card');
+
+  @override
+  bool get card {
+    _$cardAtom.reportRead();
+    return super.card;
+  }
+
+  @override
+  set card(bool value) {
+    _$cardAtom.reportWrite(value, super.card, () {
+      super.card = value;
+    });
+  }
+
   final _$profilesAtom = Atom(name: '_UserProfileControllerBase.profiles');
 
   @override
@@ -130,6 +176,9 @@ name: ${name},
 email: ${email},
 crp: ${crp},
 gestor: ${gestor},
+instituicao: ${instituicao},
+title: ${title},
+card: ${card},
 profiles: ${profiles},
 formacao: ${formacao}
     ''';
