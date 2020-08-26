@@ -9,6 +9,81 @@ part of 'user_profile_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$UserProfileController on _UserProfileControllerBase, Store {
+  final _$nameAtom = Atom(name: '_UserProfileControllerBase.name');
+
+  @override
+  String get name {
+    _$nameAtom.reportRead();
+    return super.name;
+  }
+
+  @override
+  set name(String value) {
+    _$nameAtom.reportWrite(value, super.name, () {
+      super.name = value;
+    });
+  }
+
+  final _$emailAtom = Atom(name: '_UserProfileControllerBase.email');
+
+  @override
+  String get email {
+    _$emailAtom.reportRead();
+    return super.email;
+  }
+
+  @override
+  set email(String value) {
+    _$emailAtom.reportWrite(value, super.email, () {
+      super.email = value;
+    });
+  }
+
+  final _$crpAtom = Atom(name: '_UserProfileControllerBase.crp');
+
+  @override
+  String get crp {
+    _$crpAtom.reportRead();
+    return super.crp;
+  }
+
+  @override
+  set crp(String value) {
+    _$crpAtom.reportWrite(value, super.crp, () {
+      super.crp = value;
+    });
+  }
+
+  final _$gestorAtom = Atom(name: '_UserProfileControllerBase.gestor');
+
+  @override
+  bool get gestor {
+    _$gestorAtom.reportRead();
+    return super.gestor;
+  }
+
+  @override
+  set gestor(bool value) {
+    _$gestorAtom.reportWrite(value, super.gestor, () {
+      super.gestor = value;
+    });
+  }
+
+  final _$profilesAtom = Atom(name: '_UserProfileControllerBase.profiles');
+
+  @override
+  List<ProfileModel> get profiles {
+    _$profilesAtom.reportRead();
+    return super.profiles;
+  }
+
+  @override
+  set profiles(List<ProfileModel> value) {
+    _$profilesAtom.reportWrite(value, super.profiles, () {
+      super.profiles = value;
+    });
+  }
+
   final _$formacaoAtom = Atom(name: '_UserProfileControllerBase.formacao');
 
   @override
@@ -32,6 +107,14 @@ mixin _$UserProfileController on _UserProfileControllerBase, Store {
     return _$addFormacaoAsyncAction.run(() => super.addFormacao());
   }
 
+  final _$getProfileAsyncAction =
+      AsyncAction('_UserProfileControllerBase.getProfile');
+
+  @override
+  Future<dynamic> getProfile() {
+    return _$getProfileAsyncAction.run(() => super.getProfile());
+  }
+
   final _$getFormacaoAsyncAction =
       AsyncAction('_UserProfileControllerBase.getFormacao');
 
@@ -43,6 +126,11 @@ mixin _$UserProfileController on _UserProfileControllerBase, Store {
   @override
   String toString() {
     return '''
+name: ${name},
+email: ${email},
+crp: ${crp},
+gestor: ${gestor},
+profiles: ${profiles},
 formacao: ${formacao}
     ''';
   }

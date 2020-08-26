@@ -30,6 +30,7 @@ class _UserProfilePageState
       ),
       body: Observer(builder: (context) {
         controller.getFormacao();
+        controller.getProfile();
         return Container(
           padding:
               EdgeInsets.symmetric(horizontal: sw * 0.05, vertical: sh * 0.03),
@@ -38,15 +39,15 @@ class _UserProfilePageState
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Nome: Raphael',
+                'Nome: ${controller.name}',
                 style: TextStyle(color: colorA, fontSize: sh * 0.02),
               ),
               Text(
-                'Email: raaschraphael@gmail.com',
+                'Email: ${controller.email}',
                 style: TextStyle(color: colorA, fontSize: sh * 0.02),
               ),
               Text(
-                'CRP: 4545316513561',
+                'CRP: ${controller.crp}',
                 style: TextStyle(color: colorA, fontSize: sh * 0.02),
               ),
               SizedBox(
@@ -71,7 +72,7 @@ class _UserProfilePageState
       }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          controller.addFormacao();
+          controller.getProfile();
         },
         child: Icon(
           Icons.add,
