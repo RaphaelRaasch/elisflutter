@@ -79,7 +79,7 @@ class _AuthPageState extends ModularState<AuthPage, AuthController> {
                             ),
                             Container(
                               height: sh * 0.04,
-                              width: sw * 0.6,
+                              width: sw * 0.2,
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(sw)),

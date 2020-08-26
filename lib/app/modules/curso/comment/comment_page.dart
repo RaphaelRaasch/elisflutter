@@ -81,11 +81,15 @@ class _CommentPageState extends ModularState<CommentPage, CommentController> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+<<<<<<< HEAD
           if (controller.comment.isEmpty) {
             return;
           } else {
             controller.addcomment();
           }
+=======
+          controller.addcomment();
+>>>>>>> 9c1ae7d4d7783db79fc5292ea8af323bc6cccec9
         },
         backgroundColor: Colors.white,
         child: Icon(

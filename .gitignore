@@ -45,3 +45,7 @@ app.*.map.json
 
 # Exceptions to above rules.
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+lib/app/modules/caso_clinico/caso_clinico_controller.g.dart
+lib/app/modules/curse/curse_controller.g.dart
+lib/app/modules/caso_clinico/caso_clinico_controller.g.dart
+lib/app/modules/case/case_controller.dart
