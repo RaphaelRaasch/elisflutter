@@ -47,6 +47,16 @@ abstract class _UserProfileControllerBase with Store {
     }
   }
 
+  @action
+  Future deletFormacao(id) async {
+    Firestore.instance
+        .collection('profile')
+        .document(userStore.user.localId)
+        .collection('formacao')
+        .document(id)
+        .delete();
+  }
+
   List<ProfileModel> pmodel;
 
   @observable

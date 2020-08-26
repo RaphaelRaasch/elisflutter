@@ -5,10 +5,12 @@ import '../../colors.dart';
 class FormCardWidget extends StatelessWidget {
   final instituicao;
   final titulo;
+  final delete;
 
   const FormCardWidget({
     @required this.instituicao,
     @required this.titulo,
+    @required this.delete,
   });
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,7 @@ class FormCardWidget extends StatelessWidget {
                     Icons.delete,
                     color: Colors.red,
                   ),
-                  onPressed: () {},
+                  onPressed: delete,
                 ),
               ],
             )

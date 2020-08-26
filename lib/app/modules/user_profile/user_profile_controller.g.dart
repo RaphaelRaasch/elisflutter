@@ -153,6 +153,14 @@ mixin _$UserProfileController on _UserProfileControllerBase, Store {
     return _$addFormacaoAsyncAction.run(() => super.addFormacao());
   }
 
+  final _$deletFormacaoAsyncAction =
+      AsyncAction('_UserProfileControllerBase.deletFormacao');
+
+  @override
+  Future<dynamic> deletFormacao(dynamic id) {
+    return _$deletFormacaoAsyncAction.run(() => super.deletFormacao(id));
+  }
+
   final _$getProfileAsyncAction =
       AsyncAction('_UserProfileControllerBase.getProfile');
 

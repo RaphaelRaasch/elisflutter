@@ -33,7 +33,7 @@ class _UserProfilePageState
         controller.getFormacao();
         controller.getProfile();
         return SingleChildScrollView(
-                  child: Stack(
+          child: Stack(
             children: [
               Container(
                 padding: EdgeInsets.symmetric(
@@ -66,6 +66,9 @@ class _UserProfilePageState
                           return FormCardWidget(
                             titulo: 'Titulo: ${formacao.titulo}',
                             instituicao: 'Instituicao: ${formacao.instituicao}',
+                            delete: () {
+                              controller.deletFormacao(formacao.id);
+                            },
                           );
                         },
                       ),
