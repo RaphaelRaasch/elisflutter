@@ -60,8 +60,7 @@ mixin _$CasoClinicoController on _CasoClinicoControllerBase, Store {
   String toString() {
     return '''
 title: ${title},
-description: ${description},
-error: ${error}
+description: ${description}
     ''';
   }
 }

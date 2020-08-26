@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elis/app/modules/model/comment_model.dart';
-import 'package:elis/app/modules/model/caso_model.dart';
+import 'package:elis/app/modules/model/curso_model.dart';
 import 'package:elis/app/modules/store/user_store.dart';
 import 'package:mobx/mobx.dart';
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:elis/app/modules/colors.dart';
 
 class CursoWidget extends StatelessWidget {
   final title;
@@ -7,7 +6,6 @@ class CursoWidget extends StatelessWidget {
   final data;
   final duracao;
   final local;
-  final onPressed;
 
   const CursoWidget({
     @required this.title,
@@ -15,9 +13,7 @@ class CursoWidget extends StatelessWidget {
     @required this.data,
     @required this.duracao,
     @required this.local,
-    @required this.onPressed,
   });
-
   @override
   Widget build(BuildContext context) {
     double sh = MediaQuery.of(context).size.height;
@@ -57,17 +53,11 @@ class CursoWidget extends StatelessWidget {
             SizedBox(
               height: sh * 0.03,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                IconButton(
-                    icon: Icon(
-                      Icons.comment,
-                      color: colorB,
-                    ),
-                    onPressed: onPressed)
-              ],
-            )
+            Text(local),
+            SizedBox(
+              height: sh * 0.03,
+            ),
+            Text('Duração: $duracao'),
           ],
         ),
       ),

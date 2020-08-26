@@ -7,8 +7,7 @@ import 'lista_caso_controller.dart';
 
 class ListaCasoPage extends StatefulWidget {
   final String title;
-  const ListaCasoPage({Key key, this.title = "Casos Clínicos"})
-      : super(key: key);
+  const ListaCasoPage({Key key, this.title = "ListaCaso"}) : super(key: key);
 
   @override
   _ListaCasoPageState createState() => _ListaCasoPageState();
